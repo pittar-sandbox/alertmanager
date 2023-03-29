@@ -1,0 +1,15 @@
+namespace: openshift-monitoring
+
+generatorOptions:
+  disableNameSuffixHash: true
+  annotations:
+    app.kubernetes.io/component: alert-router
+    app.kubernetes.io/instance: main
+    app.kubernetes.io/name: alertmanager
+    app.kubernetes.io/part-of: openshift-monitoring
+    app.kubernetes.io/version: 0.24.0
+
+secretGenerator:
+ - name: alertmanager-main
+   files:
+     - alertmanager.yaml
